@@ -2,17 +2,11 @@
 
 
 
-<div class="form-inputs">
-<%= simple_form_for(@task) do |f| %>
-        <%= f.input :name %>
-        <%= f.submit "Let's Teach!", :class => "button standard accent" %>
-        <% end %>
-  </div>
-
   <% @user.tasks.each do |task| %>
   <%= task.id %>
   <%= task.name %>
 <%= task.status %>
+<%= link_to "done", done_task_path(task) %>
 
 <% end %>
 

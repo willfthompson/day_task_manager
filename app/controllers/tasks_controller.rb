@@ -12,6 +12,15 @@ class TasksController < ApplicationController
     end
   end
 
+  def done
+    raise
+    @task = Task.find(params[:id])
+    @task.status = "done"
+    @task.save
+    redirect_to account_path
+
+  end
+
 private
 
   def task_params
