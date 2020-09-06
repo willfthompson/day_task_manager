@@ -1,6 +1,11 @@
 <h1><%= @user %></h1>
 
-
+<div class="form-inputs">
+<%= simple_form_for [  @task ] do |f| %>
+        <%= f.input :name %>
+        <%= f.submit "Add", :class => "btn btn-primary" %>
+        <% end %>
+</div>
 
   <% @user.tasks.each do |task| %>
   <%= task.id %>
@@ -11,4 +16,10 @@
 <% end %>
 
 
-<%= @user.note.content %>
+<div class="form-inputs">
+<%= simple_form_for [  @user.note ] do |f| %>
+        <%= f.input :content %>
+        <%= f.submit "Add", :class => "btn btn-primary" %>
+        <% end %>
+</div>
+
