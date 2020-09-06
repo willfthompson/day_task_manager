@@ -12,10 +12,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def done
+    @task = Task.find(params[:format])
+    @task.toggle(:status)
+    @task.save!
+    redirect_to account_path(current_user)
+  end
+
 private
 
   def task_params
-    params.require("task").permit(:name)
+    params.require("task").permit(:name, :status)
   end
 end
 
