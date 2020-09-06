@@ -6,7 +6,7 @@
   <%= task.id %>
   <%= task.name %>
 <%= task.status %>
-<%= link_to "done", done_task_path(task) %>
+<%= link_to "done", done_path(task), method: :post %>
 
 <% end %>
 
