@@ -18,3 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+
+every 5.minutes do
+  runner "Task.delete_all"
+end
